@@ -31,7 +31,7 @@ export default function TabBar() {
   };
 
   return (
-    <Box sx={{ width: '100%', position: 'fixed', bottom: 0 }}>
+    <Box sx={{ width: '100%', position: 'fixed', bottom: 0, left: 0, alignSelf: 'center' }}>
       <BottomNavigation value={value} onChange={handleChange} showLabels>
         <BottomNavigationAction label="Tests" icon={<AssessmentIcon />} />
         <BottomNavigationAction label="Home" icon={<HomeIcon />} />
