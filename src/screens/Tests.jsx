@@ -1,29 +1,38 @@
 import React, { useState, useEffect } from "react";
 import tests from "../tests/testsProvider";
 import Modal from "react-modal";
+import { currentTestAtom,testProgressAtom } from "../../globalAtoms";
+import { useAtom } from "jotai";
+import { BrowserRouter, Routes, Route,useNavigate } from "react-router-dom";
+import InTest from "./InTest";
 Modal.setAppElement("#root");
 
 
-export default function Tests() {
+export function Tests() {
+    const navigate = useNavigate();
     const [testPreviewed, setTestPreviewed] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [currentTest, setCurrentTest] = useAtom(currentTestAtom);
+    const [testProgress, setTestProgress] = useAtom(testProgressAtom);
     useEffect(() => {
         console.log(tests);
     }, []);
-    /*const modalStyle = {
-        content: {
-          height: "50vh",
-        },
-      };*/
+   
     function handleTestClick(testToPreview) {
-        console.log(`about to set testPreviewed to ${testToPreview}`);
         setTestPreviewed(testToPreview);
-        console.log(`testPreviewed: ${testPreviewed} (after setTestPreviewed)`)
         setModalIsOpen(true);
-        console.log('made it to end of handleTestClick');
     }
     function handleCloseModal() {
         setModalIsOpen(false);
+    }
+    function handleTestStart(){
+        setCurrentTest(testPreviewed);
+        setTestProgress({
+            complete: false,
+            block: 0,
+            question: 0,
+        });
+        navigate('/tests/in-test');
     }
     return (
         <div className="parentPage">
@@ -51,11 +60,21 @@ export default function Tests() {
                     >
                         <h2>{`${testPreviewed.name}`}</h2>
                         <h3>{`${testPreviewed.description}`}</h3>
+                        <button onClick={handleTestStart}><h2>Begin</h2></button>
                     </Modal>
                 )
 
             }
 
         </div>
+    );
+}
+
+export default function TestsMain() {
+    return(
+        <Routes>
+            <Route path="/" element={<Tests />} />
+            <Route path="/in-test" element={<InTest />} />
+        </Routes>
     );
 }

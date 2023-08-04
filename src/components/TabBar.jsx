@@ -30,13 +30,20 @@ export default function TabBar() {
     }
   };
 
+  const tabBarStyle = {
+
+  };
+  const tabBtnStyle = {
+
+  };
+
   return (
-    <Box sx={{ width: '100%', position: 'fixed', bottom: 0, left: 0, alignSelf: 'center' }}>
+    <Box sx={{ width: '100%', position: 'fixed', bottom: 0, left: 0, alignSelf: 'center'}} >
       <BottomNavigation value={value} onChange={handleChange} showLabels>
         <BottomNavigationAction label="Tests" icon={<AssessmentIcon />} />
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Results" icon={<BarChartIcon />} />
-        <BottomNavigationAction label="Settings" icon={<SettingsIcon />} />
+        <BottomNavigationAction label="Home" icon={<HomeIcon />}  />
+        <BottomNavigationAction label="Results" icon={<BarChartIcon />}  />
+        <BottomNavigationAction label="Settings" icon={<SettingsIcon />}  />
         
         
       </BottomNavigation>

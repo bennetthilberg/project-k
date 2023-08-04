@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TabBar from './components/TabBar';
-import Tests from "./screens/Tests";
+import TestsMain from "./screens/Tests";
+import InTest from "./screens/InTest";
 import './App.scss';
 
 export default function App() {
@@ -10,7 +11,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/settings" element={<SettingsPage />} />
-        <Route path="/tests" element={<Tests />} />
+        <Route path="/tests/*" element={<TestsMain />} > 
+        </Route>
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
 

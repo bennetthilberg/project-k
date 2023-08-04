@@ -8,7 +8,7 @@ export default function raceIAT(){
       id: 0,
       name: 'Race Implicit Association Test',
       description: 'This test will measure your implicit racial bias.',
-      takenYet: false,
+      complete: false,
       blocks: [
         {
           questions: [{
