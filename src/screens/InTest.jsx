@@ -66,19 +66,34 @@ export default function InTest() {
         <div className="parentPage" id="inTest">
             {currentTest && currentQuestion && (
                 <>
-                    <h2 className="questionText">{currentQuestion.text}</h2>
+                    {
+                        currentQuestion.contentType === 'text' && (
+                            <h2 className="questionText">{currentQuestion.text}</h2>
+                        )
+                    }
+                    {
+                        currentQuestion.contentType === 'image' && (
+                            <img
+                                src={`/assets/faces/${currentQuestion.imgName}`}
+                                className="questionImg"
+                            />
+                        )
+                    }
 
-                    {currentQuestion?.buttonLabels?.[0] && (
-                        <button className="testBtn a" onClick={() => handleButton(0)}>
-                            {currentQuestion.buttonLabels[0]}
-                        </button>
-                    )}
+                    <div className="btnsHolder">
+                        {currentQuestion?.buttonLabels?.[0] && (
+                            <div className="testBtn a" onClick={() => handleButton(0)}>
+                                <p>{currentQuestion.buttonLabels[0]}</p>
+                            </div>
+                        )}
 
-                    {currentQuestion?.buttonLabels?.[1] && (
-                        <button className="testBtn b" onClick={() => handleButton(1)}>
-                            {currentQuestion.buttonLabels[1]}
-                        </button>
-                    )}
+                        {currentQuestion?.buttonLabels?.[1] && (
+                            <div className="testBtn b" onClick={() => handleButton(1)}>
+                                <p>{currentQuestion.buttonLabels[1]}</p>
+                            </div>
+                        )}
+                    </div>
+
                 </>
             )}
         </div>
