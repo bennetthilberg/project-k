@@ -24,6 +24,7 @@ export default function raceIAT(){
           {
             type: 'info',
             text: 'We\'ll start with a practice round. Press the green button for good words, and the red button for bad words.',
+            buttonLabels: ['Let\'s Go!']
           }]
         },
         {
