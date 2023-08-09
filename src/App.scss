@@ -14,10 +14,25 @@
     display: grid;
     grid-template-rows: 1fr 300px;
     
-    .questionText, .questionImg{
+    .questionContent{
         grid-row: 1/2;
         grid-column: 1/-1;
+        place-self: center;
+        .questionImg{
+            place-self: center;
+        }
+        .questionText{
+            text-align: center;
+            margin: 20px;
+            border: 2px solid black;
+            padding: 12px;
+        }
+        .questionText.bigText{
+            font-size: 5.5rem;
+            border: none;
+        }
     }
+    
     .btnsHolder{
         grid-row: 2/-1;
         display: grid;
@@ -32,9 +47,14 @@
             p{
                 font-size: 3.5rem;
             }
+            
         }
         .testBtn.a:only-child{
             grid-column: 1/-1;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transform: scale(0.75);
+            
         }
         .testBtn.a:not(:only-child){
             grid-column: 1/2;
