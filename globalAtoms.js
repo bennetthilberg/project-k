@@ -9,6 +9,8 @@ export const testProgressAtom = atomWithStorage('testProgressAtom',{
 });
 
 export const testResultsAtom = atomWithStorage('testResultsAtom', {
+    testId: null,
+    blocks: [],
     /* example...
     testId: 0 // from 'id' key in currentTestAtom/test file
     blocks: [ NOTE: start with first actually scored block

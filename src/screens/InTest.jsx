@@ -1,4 +1,4 @@
-import { currentTestAtom, testProgressAtom } from "../../globalAtoms";
+import { currentTestAtom, testProgressAtom, testResultsAtom } from "../../globalAtoms";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useAtom } from "jotai";
 import { useEffect, useState, useMemo } from "react";
@@ -6,8 +6,10 @@ import { useEffect, useState, useMemo } from "react";
 export default function InTest() {
     const [currentTest, setCurrentTest] = useAtom(currentTestAtom);
     const [testProgress, setTestProgress] = useAtom(testProgressAtom);
+    const [testResults, setTestResults] = useAtom(testResultsAtom);
+    const [responseTimer, setResponseTimer] = useState(0);
     const [showTextBig, setShowTextBig] = useState(false);
-    // currentQuestion?
+    
     const currentQuestion = useMemo(() => {
         if (currentTest === null) {
             return null;
@@ -25,6 +27,13 @@ export default function InTest() {
             setShowTextBig(false);
         }
     }, [currentQuestion]);
+
+    useEffect(()=>{
+        if(!testResults.testId){
+            setTestResults({...testResults, testId: currentTest.id});
+        }
+    },[]) // this might run all the time because the check might happen before react has gotten testResults. fix?
+
     
 
 function handleButton(resLabelIndex) {
@@ -47,8 +56,59 @@ function handleButton(resLabelIndex) {
             alert('wrong');
         }
     }
-    else if (currentQuestion.type === 'bin') { // 'bin' = binary = 'a or b' question
-        // TODO: log the response (buttonLabels[resLabelIndex])
+    else if (currentQuestion.type === 'scored') { 
+        let timeTaken = Date.now() - responseTimer;
+        /*
+        DONE if there's no results id yet, create one
+        then, check if this block's index in currentTest's blocks array matches the last object's blockId in testResults.blocks
+            DONE if not, push a new block into currentTest.blocks with blockId: (the index of this current block in currentTest.blocks)
+        DONE then, make a stagingResponse object
+        DONE then, check if the response was correct
+            DONE if it was, stagingResponse.correct = true
+            DONE it not, stagingResponse.correct = false
+        DONE then, set stagingResponse.responseTime = timeTaken
+        */
+
+        if( // if this current block isn't in testResults yet, add it
+            testProgress.block !== testResults.blocks[testResults.blocks.length - 1]
+        ) {
+            setTestResults(prevResults => {
+                const newBlock = {
+                    blockId: testProgress.block,
+                    questions: []
+                }
+                return {
+                    ...prevResults,
+                    blocks: [...prevResults.blocks, newBlock]
+                }
+            })
+        }
+        let stagingQuestionResponse = {};
+        if(currentQuestion.buttonLabels[resLabelIndex] === currentQuestion.correctAnswer){ //checking if answer was right
+            stagingQuestionResponse.correct = true;
+        }
+        else{
+            stagingQuestionResponse.correct = false;
+        }
+        stagingQuestionResponse.responseTime = timeTaken;
+
+        setTestResults(prevResults => {
+            const lastBlockIndex = prevResults.blocks.length - 1;
+            const lastBlock = prevResults.blocks[lastBlockIndex];
+            const newLastBlock = {
+                ...lastBlock,
+                questions: [...lastBlock.questions, stagingQuestionResponse]
+            };
+            const updatedBlocks = [
+                ...prevResults.blocks.slice(0, lastBlockIndex),
+                newLastBlock
+            ];
+            return {
+                ...prevResults,
+                blocks: updatedBlocks
+            };
+        });
+
         goToNextQuestion();
     }
 }
@@ -68,6 +128,7 @@ function goToNextQuestion() {
     else {
         setTestProgress({ ...testProgress, question: 0, block: testProgress.block + 1 });
     }
+    setResponseTimer(Date.now());
 }
 
 return (
