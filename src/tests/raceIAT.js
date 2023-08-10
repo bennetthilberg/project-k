@@ -1,7 +1,7 @@
 export default function raceIAT(){
   const goodWords = ['Joy', 'Love', 'Peace', 'Wonderful', 'Pleasure', 'Friend', 'Laughter', 'Happy', 'Perfect', 'Smile', 'Caring', 'Enjoy', 'Sweet', 'Pleasant', 'Delightful', 'Lovely', 'Heart', 'Delicious', 'Great', 'Delight', 'Beautiful', 'Affection', 'Serenity', 'Heaven', 'Comfort', 'Honor', 'Flower', 'Brilliant', 'Gentle', 'Caring', 'Paradise', 'Magnificent', 'Glee', 'Tender', 'Sunny', 'Excitement', 'Smiling', 'Kindness', 'Pleasant', 'Delightful', 'Lovely', 'Heart', 'Charm', 'Delicious', 'Great', 'Good', 'Delight', 'Beautiful', 'Glorious', 'Affection', 'Serenity', 'Heaven', 'Comfort', 'Honor', 'Flower', 'Brilliant', 'Gentle', 'Caring', 'Paradise', 'Magnificent', 'Glee', 'Tender', 'Sunny', 'Excitement', 'Smiling', 'Kindness'];
   const badWords = ['Agony', 'Terrible', 'Horrible', 'Nasty', 'Evil', 'War', 'Awful', 'Failure', 'Sick', 'Hate', 'Angry', 'Rotten', 'Pain', 'Poison', 'Nausea', 'Disaster', 'Ugly', 'Dirty', 'Stink', 'Stupid', 'Foul', 'Vomit', 'Sick', 'Rude', 'Yucky', 'Mean', 'Nasty', 'Gross', 'Evil', 'War', 'Awful', 'Failure', 'Miserable', 'Hate', 'Angry', 'Rotten', 'Pain', 'Poison', 'Nausea', 'Disaster', 'Ugly', 'Dirty', 'Stink', 'Stupid', 'Foul', 'Vomit', 'Sick', 'Rude', 'Yucky', 'Mean', 'Nasty', 'Gross', 'Agony', 'Terrible', 'Horrible', 'Nasty', 'Evil', 'War', 'Awful', 'Failure', 'Hate', 'Angry', 'Rotten', 'Pain', 'Poison', 'Nausea', 'Disaster', 'Ugly', 'Dirty', 'Stink', 'Stupid', 'Foul', 'Vomit', 'Sick', 'Rude', 'Yucky', 'Mean', 'Nasty', 'Gross'];
-  const blackFaces = ['face1.jpeg', 'face2.jpeg','face4.jpeg', 'face9.jpg', 'face10.jpg', 'face12.jpg',  'face14.jpg','face15.jpg','face19.jpg','face20.jpg','face21.jpg','face23.jpg','face25.jpg','face26.jpg','face28.jpg','face33.jpg','face34.jpg','face35.jpg','face46.jpg','face37.jpg','face38.jpg','face39.jpg','face47.jpg','face50.jpg'];
+  const blackFaces = ['face1.jpeg', 'face2.jpeg','face51.jpg', 'face9.jpg', 'face10.jpg', 'face12.jpg',  'face14.jpg','face15.jpg','face19.jpg','face20.jpg','face21.jpg','face23.jpg','face25.jpg','face26.jpg','face28.jpg','face33.jpg','face34.jpg','face35.jpg','face46.jpg','face37.jpg','face38.jpg','face39.jpg','face47.jpg','face50.jpg'];
   const whiteFaces = ['face5.jpeg', 'face6.jpeg', 'face7.jpeg', 'face8.jpeg', 'face11.jpg', 'face13.jpg','face16.jpg','face17.jpg','face22.jpg','face24.jpg','face27.jpg','face29.jpg','face30.jpg','face31.jpg','face46.jpg','face43.jpg','face45.jpg','face46.jpg','face49.jpg','face53.jpg','face54.jpg','face59.jpg','face60.jpg','face61.jpg'];
   // 11063 in trn
   return(
@@ -113,7 +113,7 @@ export default function raceIAT(){
             {
               type: 'practice',
               contentType: 'image',
-              text: `${blackFaces[2]}`,
+              imgName: `${blackFaces[2]}`,//
               buttonLabels: ['Good\nWhite', 'Bad\nBlack'],
               correctAnswer: 'Bad\nBlack'
             },
@@ -233,7 +233,7 @@ export default function raceIAT(){
             {
               type: 'scored',
               contentType: 'text',
-              text: `${badWords[4]}`,
+              text: `${badWords[17]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
@@ -254,14 +254,14 @@ export default function raceIAT(){
             {
               type: 'scored',
               contentType: 'text',
-              text: `${goodWords[7]}`,
+              text: `${goodWords[12]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${blackFaces[6]}`,
+              imgName: `${blackFaces[9]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
@@ -282,7 +282,7 @@ export default function raceIAT(){
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${blackFaces[7]}`,
+              imgName: `${blackFaces[12]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
@@ -303,7 +303,7 @@ export default function raceIAT(){
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${whiteFaces[6]}`,
+              imgName: `${whiteFaces[10]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
@@ -327,7 +327,7 @@ export default function raceIAT(){
             {
               type: 'scored',
               contentType: 'text',
-              text: `${goodWords[8]}`,
+              text: `${goodWords[18]}`,
               buttonLabels: ['Good\nWhite', 'Bad\nBlack'],
               correctAnswer: 'Good\nWhite'
             },
@@ -341,7 +341,7 @@ export default function raceIAT(){
             {
               type: 'scored',
               contentType: 'text',
-              text: `${badWords[6]}`,
+              text: `${badWords[20]}`,
               buttonLabels: ['Good\nWhite', 'Bad\nBlack'],
               correctAnswer: 'Bad\nBlack'
             },
@@ -413,7 +413,7 @@ export default function raceIAT(){
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${blackFaces[9]}`,
+              imgName: `${blackFaces[15]}`,
               buttonLabels: ['Good\nWhite', 'Bad\nBlack'],
               correctAnswer: 'Bad\nBlack'
             },
@@ -444,105 +444,105 @@ export default function raceIAT(){
             {
               type: 'scored',
               contentType: 'text',
-              text: `${badWords[9]}`,
+              text: `${badWords[24]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${whiteFaces[9]}`,
+              imgName: `${whiteFaces[14]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
-              text: `${goodWords[11]}`,
+              text: `${goodWords[15]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'text',
-              text: `${goodWords[10]}`,
+              text: `${goodWords[21]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${blackFaces[8]}`,
+              imgName: `${blackFaces[13]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${whiteFaces[8]}`,
+              imgName: `${whiteFaces[13]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${whiteFaces[7]}`,
+              imgName: `${whiteFaces[12]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
-              text: `${badWords[7]}`,
+              text: `${badWords[22]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
-              text: `${badWords[6]}`,
+              text: `${badWords[21]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${blackFaces[7]}`,
+              imgName: `${blackFaces[14]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'text',
-              text: `${goodWords[9]}`,
+              text: `${goodWords[20]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${whiteFaces[6]}`,
+              imgName: `${whiteFaces[11]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
-              text: `${badWords[5]}`,
+              text: `${badWords[19]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
-              imgName: `${blackFaces[6]}`,
+              imgName: `${blackFaces[11]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'text',
-              text: `${goodWords[8]}`,
+              text: `${goodWords[19]}`,
               buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
               correctAnswer: 'Good\nBlack'
             }
