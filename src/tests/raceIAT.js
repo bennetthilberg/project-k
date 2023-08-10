@@ -234,85 +234,85 @@ export default function raceIAT(){
               type: 'scored',
               contentType: 'text',
               text: `${badWords[4]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${whiteFaces[3]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${goodWords[7]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${goodWords[7]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${blackFaces[6]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${whiteFaces[4]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${badWords[5]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${blackFaces[7]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${badWords[6]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${whiteFaces[5]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${whiteFaces[6]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${goodWords[8]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             }
           ]
         },
@@ -445,106 +445,106 @@ export default function raceIAT(){
               type: 'scored',
               contentType: 'text',
               text: `${badWords[9]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${whiteFaces[9]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${goodWords[11]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${goodWords[10]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${blackFaces[8]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${whiteFaces[8]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${whiteFaces[7]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${badWords[7]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${badWords[6]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${blackFaces[7]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${goodWords[9]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${whiteFaces[6]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${badWords[5]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Bad/White'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Bad\nWhite'
             },
             {
               type: 'scored',
               contentType: 'image',
               imgName: `${blackFaces[6]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             },
             {
               type: 'scored',
               contentType: 'text',
               text: `${goodWords[8]}`,
-              buttonLabels: ['Bad/White', 'Good/Black'],
-              correctAnswer: 'Good/Black'
+              buttonLabels: ['Bad\nWhite', 'Good\nBlack'],
+              correctAnswer: 'Good\nBlack'
             }
           ]
         },

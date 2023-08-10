@@ -18,7 +18,6 @@ export const testResultsAtom = atomWithStorage('testResultsAtom', {
             blockId: 2, // index of the block in the test's 'blocks' array
             questions: [ // array of questions in the block
                 {
-                    questionId: 0, // index of the question in the block's 'questions' array
                     correct: true, // whether the user's response was correct
                     responseTime: 100, // time in ms from when the question was displayed to when the user responded
                 },

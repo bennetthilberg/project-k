@@ -58,20 +58,11 @@ function handleButton(resLabelIndex) {
     }
     else if (currentQuestion.type === 'scored') { 
         let timeTaken = Date.now() - responseTimer;
-        /*
-        DONE if there's no results id yet, create one
-        then, check if this block's index in currentTest's blocks array matches the last object's blockId in testResults.blocks
-            DONE if not, push a new block into currentTest.blocks with blockId: (the index of this current block in currentTest.blocks)
-        DONE then, make a stagingResponse object
-        DONE then, check if the response was correct
-            DONE if it was, stagingResponse.correct = true
-            DONE it not, stagingResponse.correct = false
-        DONE then, set stagingResponse.responseTime = timeTaken
-        */
-
-        if( // if this current block isn't in testResults yet, add it
-            testProgress.block !== testResults.blocks[testResults.blocks.length - 1]
-        ) {
+        
+        console.log('Checking to see if current block is in testResults.blocks yet...')
+         // if this current block isn't in testResults yet, add i
+        if(testProgress.block !== testResults.blocks[testResults.blocks.length - 1].blockId) {
+            console.log('This is the first question of a new block! Adding a new block to testResults.blocks...');
             setTestResults(prevResults => {
                 const newBlock = {
                     blockId: testProgress.block,
@@ -83,11 +74,16 @@ function handleButton(resLabelIndex) {
                 }
             })
         }
+        else{
+            console.log('This is not a new block.');
+        }
         let stagingQuestionResponse = {};
         if(currentQuestion.buttonLabels[resLabelIndex] === currentQuestion.correctAnswer){ //checking if answer was right
+            console.log('Correct! stagingQuestionResponse.correct will be true.');
             stagingQuestionResponse.correct = true;
         }
         else{
+            console.log('Incorrect. stagingQuestionResponse.correct will be false.');
             stagingQuestionResponse.correct = false;
         }
         stagingQuestionResponse.responseTime = timeTaken;
