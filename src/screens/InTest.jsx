@@ -172,13 +172,13 @@ export default function InTest() {
                     <div className="btnsHolder">
                         {currentQuestion?.buttonLabels?.[0] && (
                             <div className="testBtn a" onClick={() => handleButton(0)}>
-                                <p>{currentQuestion.buttonLabels[0]}</p>
+                                <p className="btnLabel">{currentQuestion.buttonLabels[0]}</p>
                             </div>
                         )}
 
                         {currentQuestion?.buttonLabels?.[1] && (
                             <div className="testBtn b" onClick={() => handleButton(1)}>
-                                <p>{currentQuestion.buttonLabels[1]}</p>
+                                <p className="btnLabel">{currentQuestion.buttonLabels[1]}</p>
                             </div>
                         )}
                     </div>
