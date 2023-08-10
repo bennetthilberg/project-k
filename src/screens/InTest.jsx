@@ -28,11 +28,11 @@ export default function InTest() {
         }
     }, [currentQuestion]);
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         if(!testResults.testId){
             setTestResults({...testResults, testId: currentTest.id});
         }
-    },[]) // this might run all the time because the check might happen before react has gotten testResults. fix?
+    },[])*/ // this might run all the time because the check might happen before react has gotten testResults. fix?
 
     
 
@@ -61,7 +61,8 @@ function handleButton(resLabelIndex) {
         
         console.log('Checking to see if current block is in testResults.blocks yet...')
          // if this current block isn't in testResults yet, add i
-        if(testProgress.block !== testResults.blocks[testResults.blocks.length - 1].blockId) {
+        if(!testResults.blocks[0] ||
+            testProgress.block !== testResults.blocks[testResults.blocks.length - 1].blockId) {
             console.log('This is the first question of a new block! Adding a new block to testResults.blocks...');
             setTestResults(prevResults => {
                 const newBlock = {

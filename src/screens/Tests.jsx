@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import tests from "../tests/testsProvider";
 import Modal from "react-modal";
-import { currentTestAtom,testProgressAtom } from "../../globalAtoms";
+import { currentTestAtom,testProgressAtom,testResultsAtom } from "../../globalAtoms";
 import { useAtom } from "jotai";
 import { BrowserRouter, Routes, Route,useNavigate } from "react-router-dom";
 import InTest from "./InTest";
@@ -14,6 +14,7 @@ export function Tests() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [currentTest, setCurrentTest] = useAtom(currentTestAtom);
     const [testProgress, setTestProgress] = useAtom(testProgressAtom);
+    const [testResults, setTestResults] = useAtom(testResultsAtom);
     useEffect(() => {
         console.log(tests);
     }, []);
@@ -31,6 +32,10 @@ export function Tests() {
             complete: false,
             block: 0,
             question: 0,
+        });
+        setTestResults({
+            testId: testPreviewed.id,
+            blocks: []
         });
         navigate('/tests/in-test');
     }
