@@ -29,3 +29,4 @@ export const testResultsAtom = atomWithStorage('testResultsAtom', {
 
     */
 });
+export const testReportsAtom = atomWithStorage('testReportsAtom', []); 

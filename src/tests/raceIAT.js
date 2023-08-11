@@ -127,7 +127,7 @@ export default function raceIAT(){
           ]
         },
         {
-          // contains scored questions
+          // contains scored questions | 4 whitegoodblackbad
           questions: [
             {
               type: 'info',
@@ -223,7 +223,7 @@ export default function raceIAT(){
           ]
         },
         {
-          questions: [ // contains scored questions
+          questions: [ // contains scored questions 5 | blackgoodwhitebad
             {
               type: 'info',
               contentType: 'text',
@@ -558,7 +558,9 @@ export default function raceIAT(){
             }
           ]
         }
-      ]
+      ],
+      evalFnPath: `../tests/raceIATEval` // relative to a file in screens (like InTest.jsx and Results.jsx)
     }
   );
+  
 }

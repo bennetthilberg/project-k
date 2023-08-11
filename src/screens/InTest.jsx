@@ -1,15 +1,23 @@
-import { currentTestAtom, testProgressAtom, testResultsAtom } from "../../globalAtoms";
+import { currentTestAtom, testProgressAtom, testResultsAtom, testReportsAtom } from "../../globalAtoms";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useAtom } from "jotai";
 import { useEffect, useState, useMemo, startTransition } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function InTest() {
     const [currentTest, setCurrentTest] = useAtom(currentTestAtom);
+
     const [testProgress, setTestProgress] = useAtom(testProgressAtom);
     const [testResults, setTestResults] = useAtom(testResultsAtom);
     const [responseTimer, setResponseTimer] = useState(0);
     const [showTextBig, setShowTextBig] = useState(false);
+    const [testReports, setTestReports] = useAtom(testReportsAtom);
+    const navigate = useNavigate();
+    //const [evalFn, setEvalFn] = useState(null);
+
+
 
     const currentQuestion = useMemo(() => {
         if (currentTest === null) {
@@ -62,7 +70,7 @@ export default function InTest() {
                 let timeTaken = Date.now() - responseTimer;
 
                 console.log('Checking to see if current block is in testResults.blocks yet...')
-                // if this current block isn't in testResults yet, add i
+                // if this current block isn't in testResults yet, add it
                 if (!testResults.blocks[0] || testProgress.block !== testResults.blocks[testResults.blocks.length - 1].blockId) {
                     console.log('This is the first question of a new block! Adding a new block to testResults.blocks...');
                     setTestResults(prevResults => {
@@ -123,6 +131,28 @@ export default function InTest() {
                 testProgress.question === currentTest.blocks[testProgress.block].questions.length - 1) {
                 // Logic to handle test completion
                 console.log("Test completed");
+                // TODO: make the bottom navigation tab bar have results selected
+                let testReport;
+                import(`${currentTest.evalFnPath}`).then((evalFnImported) => {
+                    console.log("Eval function probably imported and set to state. Logging it:");
+                    console.log(evalFnImported.default);
+                
+                    console.log('before doing evalFn, testResults (which will be its argument) is: ');
+                    console.log(testResults);
+                    const testReport = evalFnImported.default(testResults);
+                    console.log(testReport);
+                    setTestReports([...testReports, testReport]);
+                    console.log(testReports);
+                    navigate('/results');
+                }).catch(err => {
+                    console.log('Error importing eval function:')
+                    console.error(err);
+                });
+                
+
+                console.log(testReport);
+                setTestReports([...testReports, testReport]);
+                navigate('/results');
                 return;
             }
             else if (testProgress.question < currentTest.blocks[testProgress.block].questions.length - 1) {
