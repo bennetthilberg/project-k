@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TabBar from './components/TabBar';
 import TestsMain from "./screens/Tests";
 import InTest from "./screens/InTest";
+import ResultsPage from "./screens/Results";
 import './App.scss';
 
 export default function App() {
@@ -31,6 +32,4 @@ function SettingsPage() {
 
 
 
-function ResultsPage() {
-  return <h1>Results Page</h1>;
-}
+
